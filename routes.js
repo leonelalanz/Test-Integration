@@ -20,7 +20,7 @@ const postRouteHandler = (req, res) => {
   let {nombre, apellido, correo} = req.body
   let sqlQuery = `INSERT INTO persona (nombre, apellido, correo) VALUES ('${nombre}', '${apellido}', '${correo}')`
   myslConecction.query( sqlQuery, (error, results, fields) => {
-    if(!error) res.status(500).send(error)
+    if(error) res.status(500).send(error)
     res.send(results)
   })
 }
