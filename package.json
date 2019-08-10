@@ -23,6 +23,7 @@
   "homepage": "https://github.com/SYNERGY-GB/Test-Integration#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "fs-js": "^1.0.6",
     "mysql": "^2.17.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",

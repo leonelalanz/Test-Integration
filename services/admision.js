@@ -3,6 +3,8 @@
  */
 const bodyParser = require('body-parser');
  const request = require("request-promise");
+ const connection_db = require("../database_connection/connection");
+
 var sha1 = require('sha1');
 module.exports = function(app){
     app.get('/admision', function (req, res) {
@@ -19,7 +21,7 @@ module.exports = function(app){
       });
       app.use(bodyParser.urlencoded({ extended: false }));
       app.use(bodyParser.json());
-      app.post('/admision', function (req, res) {
+      app.post('/admision',async function (req, res) {
         if(!req.body.nombre || !req.body.apellido || !req.body.correo) {
          respuesta = {
           error: true,
@@ -32,13 +34,11 @@ module.exports = function(app){
            apellido: req.body.apellido,
            correo : req.body.correo
           };
-          respuesta = {
-           status: true,
-           codigo: 200,
-           mensaje: 'Usuario creado',
-           data: usuario
-          };
+          await connection_db.add(usuario,res).then( (respuesta)=>{
+            res.send(respuesta);
+
+          });
+ 
         };
-        res.send(respuesta);
-       });
+      });
 }
