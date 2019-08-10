@@ -1,0 +1,30 @@
+{
+  "name": "admision",
+  "version": "1.0.0",
+  "description": "Prueba tecnica Nairelys Hernandez Express.js Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYNERGY-GB/Test-Integration.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Nairelyshz"
+  ],
+  "author": "nairelyshz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYNERGY-GB/Test-Integration/issues"
+  },
+  "homepage": "https://github.com/SYNERGY-GB/Test-Integration#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sha1": "^1.1.1"
+  }
+}
