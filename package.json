@@ -1,0 +1,30 @@
+{
+  "name": "test-integration",
+  "version": "1.0.0",
+  "description": "Esta prueba está diseñada para medir tus destrezas en el área de integración. Para resolver esta prueba debes tener en cuenta que debes usar las siguientes tecnologías:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYNERGY-GB/Test-Integration.git"
+  },
+  "author": "Yohanna Padrino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYNERGY-GB/Test-Integration/issues"
+  },
+  "homepage": "https://github.com/SYNERGY-GB/Test-Integration#readme",
+  "dependencies": {
+    "async": "^3.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "properties": "^1.2.1",
+    "properties-parser": "^0.3.1",
+    "properties-reader": "^0.3.1",
+    "request": "^2.88.0",
+    "sha1": "^1.1.1"
+  }
+}
