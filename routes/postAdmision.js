@@ -11,7 +11,7 @@ const { check, validationResult } = require('express-validator');
 
 
 /**
- * Post Admision service
+ * POST Admision service
 */
 router.post('/',
     [
@@ -27,29 +27,31 @@ router.post('/',
         if (!err.isEmpty()) {
             return res.status(422).json({ errors: err.array() })
         }else{
-            //test
             // Open Data Base conecction
              
             mysqlConnection.connect((err) => {
                 if(err){
+                    //throw Exception
                     console.error('Error connecting: ' + err.stack);
                     return;
                 }
                 console.log('MySQl Connection is OPEN');
             });
+
             //CALL addUser StoredProcedure
             let sql = `CALL addUser(?,?,?)`; 
             mysqlConnection.query( 
-                sql,[nombre,apellido,correo], //Parameter
+                sql,[nombre,apellido,correo], // StoredProcedure Parameter
                 (err, results, fields) => {
-                if(err) res.status(500).send(err)
-                res.status(200).send(results)
-              })
+                    if(err) res.status(500).send(err) //throw Exception
+                    res.status(200).send(results)
+                });
 
             //Close Database Conecction
            
             mysqlConnection.end((err) => {
                 if(err){
+                    //throw Exception
                     console.error('Error closing Database: ' + err.stack);
                     return;
                 }

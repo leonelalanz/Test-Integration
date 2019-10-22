@@ -1,6 +1,8 @@
 //GLOBAL VARIABLES
 const express  = require('express');
 const router = express.Router();
+
+//Middleware
 const axios = require('axios');
 const sha1 = require('sha1');
 
